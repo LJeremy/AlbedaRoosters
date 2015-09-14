@@ -30,7 +30,6 @@ var option = '';
      option += '<option value="'+ j + '">' + classes[i] + '</option>';
     }
   }
-$('#classes').append(option);
 $('#klassen').append(option);
 
 $('#klassen').on('change', function (e) {
@@ -40,26 +39,14 @@ $('#klassen').on('change', function (e) {
       localStorage.setItem('klas', klasid);
       console.log('Saved');
       var klas = 'c000' + localStorage.getItem('klas');
-      getRooster(1, klas);
-  });
-});
-// On Select get Klas
-$('#classes').on('change', function (e) {
-    var optionSelected = $("option:selected", this);
-    var valueSelected = this.value;
-    // Verberg Sidebar na click
-    $('.button-collapse').sideNav('hide');
-    var k = valueSelected;
-    var klas = 'c000' + k;
-    console.log(klas);
-    // Krijg het rooster van de Dag 
+      // Krijg het rooster van de Dag 
       $("li a").click(function(event) {
           var id = event.target.id;
           console.log(id);
           getRooster(id, klas);
       });
-    // Begin standaard bij Maandag
-    getRooster(1, klas);
+      getRooster(1, klas);
+  });
 });
 
 }); // End document.ready
@@ -89,7 +76,7 @@ function getRooster(id, klas) {
   $.ajax({
     type: "GET",
     dataType: "json",
-    url: 'https://lars.ninja/albeda/albedashw/' + week + '/' + klas + '.json/',
+    url: 'http://localhost/albeda/albedashw/' + week + '/' + klas + '.json/',
     success: function (data) {
       NProgress.done();
       //Sort of displays the schedule
