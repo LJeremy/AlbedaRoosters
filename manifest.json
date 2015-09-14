@@ -1,0 +1,14 @@
+{
+  "short_name": "Albeda",
+  "name": "Albeda Roosters",
+  "icons": [
+    {
+      "src": "img/Albeda",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

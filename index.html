@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Albeda | Rooster</title>
+  <link rel="icon" href="img/favicon" sizes="32x32">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Chrome/iOS -->
+  <meta name="theme-color" content="#6490C7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <link rel="apple-touch-icon" href="img/icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/icon.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/icon.png">
+  
+  <!-- CSS  -->
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/nprogress.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <!--  Scripts-->
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/nprogress.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/init.js"></script>
+<body>
+<script>
+
+</script>
+  <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo">
+        <img class="logopic" src="img/Albeda.png" width="60%">
+      </a>
+      <ul id="sideMenu" class="side-nav">
+        <li><p class="flow-text" style="color: black;">Menu<p><hr/></li>
+        <select id="classes" class="browser-default">
+          <option disabled selected>Kies je Klas</option>
+        </select>
+
+      </ul>
+      <a href="#" data-activates="sideMenu" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right">
+        <li><a id="openSettings" class="waves-effect waves-light"><i class="material-icons">settings</i></a></li>
+      </ul>
+    </div>
+  </nav> <!-- Navbar -->
+
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <div class="card z-depth-1">
+            <div class="card-content">
+                <div class="row">
+                    <ul class="tabs">
+                        <li class="tab col s1"><a id="1" class="dag active" href="#rooster">MA</a></li>
+                        <li class="tab col s1"><a id="2" class="dag" href="#rooster">DI</a></li>
+                        <li class="tab col s1"><a id="3" class="dag" href="#rooster">WO</a></li>
+                        <li class="tab col s1"><a id="4" class="dag" href="#rooster">DO</a></li>
+                        <li class="tab col s1"><a id="5" class="dag" href="#rooster">VR</a></li>
+                     </ul>
+                     <div id="#rooster">
+                      <table class="tabel">
+                        <thead>
+                          <tr>
+                              <th data-field="name">Lesuur</th>
+                              <th data-field="name">Docent</th>
+                              <th data-field="name">Vak</th>
+                              <th data-field="name">Lokaal</th>
+                          </tr>
+                        </thead>
+                      </table>
+
+                     </div><!-- #rooster -->
+                </div> <!-- row -->
+            </div>
+        </div>
+    </div>         
+</div>
+
+  <!-- Modal Structure -->
+  <div id="settings" class="modal">
+    <div class="modal-content">
+      <h4>Settings</h4>
+        <label>Klas</label>
+        <select id="klassen" class="browser-default">
+          <option disabled selected>Kies je Klas</option>
+        </select>
+        <p class="flow-text">Je zult voortaan het rooster van deze klas standaard krijgen, je kan via het menu ook het rooster van andere klassen bekijken. Je kunt de Standaard klas altijd veranderen.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" id="saveKlas" class="waves-effect waves-green btn-flat modal-action modal-close">Opslaan</a>
+    </div>
+  </div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37850527-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>
