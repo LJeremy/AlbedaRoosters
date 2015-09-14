@@ -12,11 +12,6 @@ if(localStorage.getItem('klas') != null){
   $('#settings').openModal();
 }
 
-// Open Modal
-$('#openSettings').bind("click", function () {
-  $('#settings').openModal();
-});
-
 // Array met alle Klassen (SHW)
 var classes = ["42IB4-2A_K","42IB4-2B_K","42ICT2-1A_K","42ICT2-2A_K","42ICT3-1A_K","42ICT3-1B_K","42ICT3-1C_K","42ICT3-2A_K","42ICT3-2B_K","42ICT4-1A_K","42ICT4-1B_K","42ICT4-1C_K","42NB4-2A_K","42NB4-2B_K","42_TE41TMO","42DAUT3A_K","42DAUT4A_K","42DCT1A_K","42DCT2A_K","42DCT3A_K","42DENE3A_K","42DENE4A_K","42DMIT1A_K","42DMIT2A_K","42DMIT2HAVO_K","42DMIT3A_K","42DMIT4A_K","42DTDE1A_K","42DTDE2A_K","42DTDE2HAVO_K","42DTDW1A_K","42DTDW2A_K","42DTDW3A_K","42DTDW4A_K","42DMKB1A_K","42DMKB2A_K","42DMKB3A_K","42DMKB3B_k","42DMKB4A_K","42DMKB4B_K","42DMKB4C_K","42DMKB1B_K","42ICT4-2A_K","42ICT4-2B_K","42ICT4-2C_K","42NB4-2C_K","42ICT3-1D_K","42DW2HAVO_K","42CT2HAVO_K"];
 var option = '';
