@@ -94,7 +94,7 @@ function getRooster(id, klas) {
   $.ajax({
     type: "GET",
     dataType: "json",
-    url: 'http://localhost/albeda/albedashw/' + week + '/' + klas + '.json/',
+    url: 'https://lars.ninja/albeda/albedashw/' + week + '/' + klas + '.json/',
     success: function (data) {
       NProgress.done();
       //Sort of displays the schedule
