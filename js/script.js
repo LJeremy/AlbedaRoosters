@@ -12,25 +12,23 @@ if(localStorage.getItem('klas') != null){
   $('#settings').openModal();
 }
 
-// Array met alle Klassen (SHW)
-var classes = ["42IB4-2A_K","42IB4-2B_K","42ICT2-1A_K","42ICT2-2A_K","42ICT3-1A_K","42ICT3-1B_K","42ICT3-1C_K","42ICT3-2A_K","42ICT3-2B_K","42ICT4-1A_K","42ICT4-1B_K","42ICT4-1C_K","42NB4-2A_K","42NB4-2B_K","42_TE41TMO","42DAUT3A_K","42DAUT4A_K","42DCT1A_K","42DCT2A_K","42DCT3A_K","42DENE3A_K","42DENE4A_K","42DMIT1A_K","42DMIT2A_K","42DMIT2HAVO_K","42DMIT3A_K","42DMIT4A_K","42DTDE1A_K","42DTDE2A_K","42DTDE2HAVO_K","42DTDW1A_K","42DTDW2A_K","42DTDW3A_K","42DTDW4A_K","42DMKB1A_K","42DMKB2A_K","42DMKB3A_K","42DMKB3B_k","42DMKB4A_K","42DMKB4B_K","42DMKB4C_K","42DMKB1B_K","42ICT4-2A_K","42ICT4-2B_K","42ICT4-2C_K","42NB4-2C_K","42ICT3-1D_K","42DW2HAVO_K","42CT2HAVO_K"];
-var option = '';
-  // Geef alle Klassen een value
-  for (var i=0;i<classes.length;i++){
-    var j = i + 1;
-    // Als de value minder is dan 10
-    if(j < 10){
-      // Doe er 1 bij
-      var p = i + 1;
-      // Zet een 0 voor de value zodat het 01 is in plaats van 1
-      var j = "0" + p;
-      option += '<option value="'+ j + '">' + classes[i] + '</option>';
-    }
-    else {
-     option += '<option value="'+ j + '">' + classes[i] + '</option>';
-    }
-  }
-$('#klassen').append(option);
+function getKlassen() {
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: 'temp/classes_albedashw_2015.json',
+        success: function(data) {
+            $(data.classes).each(function(i, val) {
+                $.each(val, function(key, val) {
+                    $('#klassen').append('<option value="' + val + '">' + key + '</option>')
+                    //console.log(key + " : " + val);
+                });
+            });
+        }
+    });
+}
+
+getKlassen();
 
 $('#klassen').on('change', function (e) {
   var klasnaam = $("#klassen option:selected").text();
@@ -42,7 +40,7 @@ $('#klassen').on('change', function (e) {
       // Krijg het rooster van de Dag 
       $("li a").click(function(event) {
           var id = event.target.id;
-          console.log(id);
+          //console.log(id);
           getRooster(id, klas);
       });
       getRooster(1, klas);
@@ -76,7 +74,7 @@ function getRooster(id, klas) {
   $.ajax({
     type: "GET",
     dataType: "json",
-    url: 'http://localhost/albeda/albedashw/' + week + '/' + klas + '.json/',
+    url: 'https://lars.ninja/albeda/albedashw/' + week + '/' + klas + '.json/',
     success: function (data) {
       NProgress.done();
       //Sort of displays the schedule
